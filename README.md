@@ -1,6 +1,8 @@
 Invoices online constructor
 =======================
 
+http://elvir.github.io/invoice-constructor/
+
 Requirements
 ------------
 
