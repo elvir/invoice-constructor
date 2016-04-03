@@ -691,6 +691,7 @@ webpackJsonp([0],[
 	        invoice_lines: this.state.invoiceLines.map(function (line) {
 	          return {
 	            kind: line.kind,
+	            position: line.position,
 	            value: line.value,
 	            count: line.count,
 	            gadget_id: line.gadget_id,
@@ -17530,7 +17531,6 @@ webpackJsonp([0],[
 	    value: function fillSubtotalsAndGetTotal(invoiceLines) {
 	      var currentDiscount = null;
 	      var total = 0;
-	      // console.log(invoiceLines)
 	      invoiceLines.sort(function (a, b) {
 	        return b.position - a.position;
 	      }).forEach(function (line) {
@@ -17540,7 +17540,7 @@ webpackJsonp([0],[
 	          currentDiscount = line;
 	          currentDiscount.subtotal.discountAmount = 0;
 	        } else if (currentDiscount) {
-	          if (line.kind === 'FIXED_DISCOUNT' || line.kind === 'PERCENT_DISCOUNT') {
+	          if ((line.kind === 'FIXED_DISCOUNT' || line.kind === 'PERCENT_DISCOUNT') && currentDiscount.subtotal.discountAmount > 0) {
 	            currentDiscount = null;
 	          } else {
 	            line.subtotal.discountPercent = currentDiscount.value;
@@ -18829,4 +18829,4 @@ webpackJsonp([0],[
 
 /***/ }
 ]);
-//# sourceMappingURL=app.04dbd24b57b31b9996f3.js.map
+//# sourceMappingURL=app.2e694e001156608dbfd0.js.map
