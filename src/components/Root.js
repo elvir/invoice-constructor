@@ -37,6 +37,7 @@ export default class Root extends React.Component {
         function(line) {
           return {
             kind: line.kind,
+            position: line.position,
             value: line.value,
             count: line.count,
             gadget_id: line.gadget_id,

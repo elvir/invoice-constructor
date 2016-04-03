@@ -20,8 +20,8 @@ $ cd invoice-constructor
 $ npm install                   # Install Node modules listed in ./package.json (may take a while the first time)
 $ npm start                     # Compile and launch
 
-open in browser [localhost:3000](http://localhost:3000)
 ```
+open in browser [localhost:3000](http://localhost:3000)
 
 Structure
 ---------
@@ -41,7 +41,7 @@ Structure
 │   ├── components           # Generic React Components
 │   ├── constants            # Project constants
 │   ├── services             # Helper modules
-│   ├── static             # Static assets (not imported anywhere in source code)
+│   ├── static               # Static assets (not imported anywhere in source code)
 │   ├── styles               # Application-wide styles (generally settings)
 │   └── main.js              # Application bootstrap and rendering
 └── tests                    # Unit tests

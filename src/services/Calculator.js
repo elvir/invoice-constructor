@@ -23,7 +23,6 @@ export default class Calculator {
   static fillSubtotalsAndGetTotal (invoiceLines) {
     let currentDiscount = null
     let total = 0
-    // console.log(invoiceLines)
     invoiceLines.sort((a,b) => b.position - a.position).forEach( (line) =>
       {
         const subtotal = lineSubtotal(line)
@@ -33,7 +32,9 @@ export default class Calculator {
           currentDiscount.subtotal.discountAmount = 0
         }
         else if (currentDiscount) {
-          if (line.kind ===  'FIXED_DISCOUNT' || line.kind === 'PERCENT_DISCOUNT') {
+          if ((line.kind ===  'FIXED_DISCOUNT' || line.kind === 'PERCENT_DISCOUNT')
+              && currentDiscount.subtotal.discountAmount > 0
+          ) {
             currentDiscount = null
           }
           else {
